@@ -31,6 +31,7 @@ let MesonModal: FC<{
   disableMoving?: boolean;
   disableBackdropClose?: boolean;
   cardClassName?: string;
+  headerClassName?: string;
   /** put modal title at center */
   centerTitle?: boolean;
 }> = (props) => {
@@ -159,7 +160,10 @@ let MesonModal: FC<{
               data-area="meson-modal"
             >
               {props.title ? (
-                <div className={cx(rowParted, styleHeader, GlobalThemeVariables.modalHeader, disableMoving ? null : styleMoving)} onMouseDown={onMouseDown}>
+                <div
+                  className={cx(rowParted, styleHeader, GlobalThemeVariables.modalHeader, disableMoving ? null : styleMoving, props.headerClassName)}
+                  onMouseDown={onMouseDown}
+                >
                   {centerTitle ? <span /> : null}
                   <span>{props.title}</span>
                   {hideClose ? (
