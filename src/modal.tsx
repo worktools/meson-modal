@@ -22,7 +22,7 @@ let checkIfDomTreeContains = (a: Element, b: Element): boolean => {
 };
 
 let MesonModal: FC<{
-  title?: string;
+  title?: ReactNode;
   visible: boolean;
   width?: number | string;
   onClose: () => void;
